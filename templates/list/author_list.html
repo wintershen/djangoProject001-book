@@ -1,0 +1,101 @@
+{% extends 'list/Base.html' %}
+
+{% block author_list_active %}
+    active
+{% endblock %}
+
+{% block CSS %}
+
+{% endblock %}
+
+{% block page_content %}
+    <!--面板 开始-->
+    <div class="panel panel-default">
+        <div class="panel-heading">s14</div>
+        <div class="panel-body">
+            <!--表格上面的那一行-->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+                <div class="col-md-1 pull-right">
+                    <a class="btn btn-success pull-right" href="/add_author/">添加</a>
+                </div>
+            </div>
+            <!--表格上面那一行 结束-->
+            <!--表格 开始-->
+            <div class="table-box">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <td>序号</td>
+                        <td>作者id</td>
+                        <td>作者姓名</td>
+                        <td>作者作品</td>
+                        <td>操作</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for author in author_list %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ author.id }}</td>
+                            <td>{{ author.name }}</td>
+                            <td>
+                                {% for book in author.books.all %}
+                                    {% if forloop.last %}
+                                        《{{ book.title }}》
+                                    {% else %}
+                                        《{{ book.title }}》,
+                                    {% endif %}
+                                {% empty %}
+                                    暂无作品
+                                {% endfor %}
+
+                            </td>
+                            <td>
+                                <a href="/delete_author/{{ author.id }}/">删除</a>
+                                <a href="/edit_author/?id={{ author.id }}">编辑</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!--表格 结束-->
+            <!--分页开始-->
+            <div>
+                <nav aria-label="Page navigation" class="pull-right">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!--分页结束-->
+        </div>
+    </div>
+    <!--面板 结束-->
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除成功</title>
+</head>
+<body>
+
+<P>删除书籍成功,<span id="s1">3</span>秒钟后跳转回书籍列表</P>
+
+</body>
+<script>
+    {#var currentNum = document.getElementById('s1').innerText;#}
+    var currentNum = null;
+    var t2 = setInterval(function(){
+        currentNum = document.getElementById('s1').innerText;
+        document.getElementById('s1').innerText = currentNum-1;
+        if (currentNum == 1){
+            clearInterval(t2);
+            location.href = '/book_list/';
+        }
+    },1000)
+
+
+</script>
+</html>

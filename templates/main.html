@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.4.1-dist/css/bootstrap.css">
+    <style>
+        body {
+            padding-top: 70px;
+        }
+
+        .breadcrumb .active2 {
+            color: darkcyan;
+        }
+
+        .secondRow {
+            margin-top: 20px;
+        }
+
+        #ac {
+            position: relative;
+            top: -5px;
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <!--      凡是在网页中看到data-xxx = 实现xxx功能-->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">路飞商城</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">免费课程</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" action="javascript:void(0)">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-success">注册</button>
+                <button type="submit" class="btn btn-warning" data-toggle="modal" data-target="#myModal">登陆</button>
+            </form>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-pills" id="headerList">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                                          data-toggle="tab">全部</a></li>
+                <li role="presentation"><a href="#home2" aria-controls="home2" role="tab" data-toggle="tab">Python开发</a>
+                </li>
+                <li role="presentation"><a href="#home3" aria-controls="home3" role="tab" data-toggle="tab">Linux云计算</a>
+                </li>
+                <li role="presentation"><a href="#home4" aria-controls="home4" role="tab" data-toggle="tab">Web前端</a>
+                </li>
+                <li role="presentation"><a href="#home5" aria-controls="home5" role="tab" data-toggle="tab">Go语言</a>
+                </li>
+                <li role="presentation"><a href="#home6" aria-controls="hom6" role="tab" data-toggle="tab">机器学习&数据分析</a>
+                </li>
+                <li role="presentation"><a href="#home7" aria-controls="home7" role="tab"
+                                           data-toggle="tab">Java&网络安全</a></li>
+                <li role="presentation"><a href="#home8" aria-controls="home8" role="tab" data-toggle="tab">技术生涯</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content" id="courseTableTop">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <table class="table table-bordered">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="home2">
+                    <table class="table table-bordered">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="home3">
+                    <table class="table table-bordered">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="home4">
+                    <table class="table table-bordered">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="home5">
+                    <table class="table table-bordered">
+                        <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>课程名称</th>
+                            <th>讲师</th>
+                            <th>讲师身份</th>
+                            <th>优惠价格</th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="home6">
+                    <table class="table table-bordered">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="home7">
+                    <table class="table table-bordered">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="home8">
+                    <table class="table table-bordered">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row secondRow">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">分页</h3>
+                </div>
+                <div class="panel-body">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <button class="btn btn-primary" type="button">
+                        Messages <span class="badge" id="ac">4</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="thumbnail">
+                <input type="file" style="margin-bottom: 10px">
+                <button class="btn btn-success" style="margin-bottom: 10px">上传</button>
+                <button class="btn btn-primary" style="margin-bottom: 10px;">停止上传</button>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
+                         aria-valuenow="60" aria-valuemin="0"
+                         aria-valuemax="100" style="width: 0%;">
+                        0%
+                    </div>
+                </div>
+                <ul class="list-group">
+                    <!--                    <li class="list-group-item">Cras justo odio</li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="thumbnail">
+                <img src="" alt="...">
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+                    <p>...</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default"
+                                                                                       role="button">Button</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="/try_login/" method="post">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">用户名:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="username" class="form-control" id="username" placeholder="请输入用户名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd" class="col-sm-2 control-label">密码:</label>
+                        <div class="col-sm-10">
+                            <input type="password" name="pwd" class="form-control" id="pwd" placeholder="请输入密码">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-success">登陆</button>
+                        <p style="color:red">{{error_msg}}</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/static/libs/jquery-3.6.0.js"></script>
+<script src="/static/bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+<script>
+    $(function () {
+
+        // 课程获取
+        $('#headerList>li').click(function () {
+            // console.log($(this).index());
+            let index1 = $(this).index();
+            let urlCourse = null;
+            if (index1 == 0) {
+                urlCourse = "https://api.luffycity.com/api/v1/course/actual/?limit=12&offset=0";
+            } else {
+                urlCourse = `https://api.luffycity.com/api/v1/course/actual/?limit=12&offset=0&category_id=${index1}`
+            }
+            $.ajax({
+                url: urlCourse,
+                type: 'get',
+                success: function (data) {
+                    // console.log(data.data);
+                    let result = data.data.result
+                    let len = result.length
+                    $('#courseTableTop>div').eq(index1).find('tbody').html('')
+                    $('#courseTableTop>div').eq(index1).find('tbody').append(`                        <tr>
+                            <th>#</th>
+                            <th>课程名称</th>
+                            <th>讲师</th>
+                            <th>讲师身份</th>
+                            <th>优惠价格</th>
+                        </tr>`)
+                    result.forEach(function (item, index) {
+                        // console.log(len);
+                        //     $('#courseTable').append(`<tr>`);
+                        $('#courseTableTop>div').eq(index1).find('tbody').append(`<tr><td>${index + 1}</td><td>${result[index].name}</td><td>${result[index].teacher.name}</td><td>${result[index].teacher.title}</td><td>${result[index].payment_info.promotion_price}</td></tr>`)
+                    })
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            })
+        })
+
+        // $('#courseTableTop>div').click(function () {
+        //     console.log($(this).index())
+        // })
+
+
+    })
+
+</script>
+
+</body>
+</html>
+

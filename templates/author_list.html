@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作者列表</title>
+    <!-- Bootstrap core CSS -->
+{#    <link href="/static/bootstrap-3.4.1-dist/css/bootstrap.css" rel="stylesheet">#}
+{#    <link rel="stylesheet" href="{% static 'bootstrap-3.4.1-dist/css/bootstrap.css' %}">#}
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-offset-3 col-lg-6">
+            <div class="page-header">
+                <h1>作者列表</h1>
+            </div>
+            <div style="margin-bottom: 20px">
+                <a class="btn btn-primary" href="/add_author/">添加作者</a>
+            </div>
+        </div>
+
+
+        <div class="col-md-offset-3 col-lg-6">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <td>序号</td>
+                    <td>作者id</td>
+                    <td>作者姓名</td>
+                    <td>作者作品</td>
+                    <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for author in author_list %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ author.id }}</td>
+                        <td>{{ author.name }}</td>
+                        <td>
+                            {% for book in author.books.all %}
+                                {% if forloop.last %}
+                                    《{{ book.title }}》
+                                {% else %}
+                                    《{{ book.title }}》,
+                                {% endif %}
+                            {% empty %}
+                                暂无作品
+                            {% endfor %}
+
+                        </td>
+                        <td>
+                            <a href="/delete_author/?id={{ author.id }}">删除</a>
+                            <a href="/edit_author/?id={{ author.id }}">编辑</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

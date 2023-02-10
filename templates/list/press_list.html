@@ -1,0 +1,68 @@
+{% extends "list/Base.html" %}
+
+{% block press_list_active %}
+active
+{% endblock %}
+
+{% block CSS %}
+
+{% endblock %}
+
+{% block page_content %}
+            <!--面板 开始-->
+            <div class="panel panel-default">
+                <div class="panel-heading">s14</div>
+                <div class="panel-body">
+                    <!--表格上面的那一行-->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search for...">
+                                <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-md-1 pull-right">
+                            <a class="btn btn-success pull-right" href="/add_press/">添加</a>
+                        </div>
+                    </div>
+                    <!--表格上面那一行 结束-->
+                    <!--表格 开始-->
+                    <div class="table-box">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr class="text-center">
+                                <th class="text-center">序号</th>
+                                <th class="text-center">出版社id</th>
+                                <th class="text-center">出版社名称</th>
+                                <th class="text-center">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in ret %}
+                                <tr class="text-center">
+                                    <td>{{ forloop.counter }}</td>
+                                    <td>{{ i.id }}</td>
+                                    <td>{{ i.name }}</td>
+                                    <td>
+                                        <a class="btn btn-danger btn-sm" href="/delete_press/{{ i.id }}/">删除</a>
+                                        <a class="btn btn-info btn-sm" href="/edit_press/?id={{ i.id }}">编辑</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--表格 结束-->
+                    <!--分页开始-->
+                    {% load mytags %}
+                    {% pagination 8 3 %}
+                    <!--分页结束-->
+                </div>
+            </div>
+            <!--面板 结束-->
+{% endblock %}
+
+
+
